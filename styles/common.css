@@ -1,0 +1,434 @@
+
+        :root {
+            --primary-color: #C7EBC7;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --secondary-text: #666666;
+            --border-color: #e0e0e0;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --accent-color: #2e7d32;
+            --code-bg: #282c34;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            padding: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: var(--secondary-text);
+            font-size: 14px;
+        }
+
+        .card {
+            background-color: var(--bg-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: var(--accent-color);
+        }
+
+        .card-title .icon {
+            margin-right: 10px;
+        }
+
+        .code-container {
+            position: relative;
+            background-color: var(--code-bg);
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #abb2bf;
+            font-size: 14px;
+        }
+
+        .copy-btn {
+            background-color: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #2d3748;
+        }
+
+        .copy-btn.copied {
+            background-color: #2e7d32;
+        }
+
+        pre[class*="language-"] {
+            margin: 0;
+            padding: 15px;
+            background: transparent;
+            overflow-x: auto;
+        }
+
+        code[class*="language-"] {
+            font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin: 15px 0 10px;
+            color: var(--accent-color);
+        }
+
+        .tip-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #2e7d32;
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 8px 8px 8px 0;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #1b5e20;
+            transform: scale(1.02);
+        }
+
+        .button .icon {
+            margin-right: 6px;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        .section-description {
+            color: var(--secondary-text);
+            font-size: 14px;
+            margin: -8px 0 14px;
+        }
+
+        .document-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .document-button {
+            min-width: 0;
+            min-height: 42px;
+            justify-content: flex-start;
+            gap: 7px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .document-button span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .button svg {
+            width: 17px;
+            height: 17px;
+            flex: 0 0 17px;
+        }
+
+        .status-message {
+            grid-column: 1 / -1;
+            padding: 30px 15px;
+            color: var(--secondary-text);
+            text-align: center;
+        }
+
+        .error-message {
+            color: #d73a49;
+        }
+
+        body.reader-page {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #24292e;
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        body.reader-page .container {
+            max-width: 900px;
+        }
+
+        .reader-toolbar {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+
+        .reader-toolbar .button {
+            flex: 0 0 auto;
+            gap: 7px;
+            margin: 0;
+        }
+
+        .document-path {
+            min-width: 0;
+            overflow: hidden;
+            color: #6a737d;
+            font-size: 13px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .markdown-body {
+            padding: 40px 50px;
+            overflow-wrap: break-word;
+        }
+
+        .markdown-body > :first-child {
+            margin-top: 0 !important;
+        }
+
+        .markdown-body > :last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            scroll-margin-top: 20px;
+            color: #24292e;
+            line-height: 1.25;
+        }
+
+        .markdown-body h1,
+        .markdown-body h2 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #eaecef;
+        }
+
+        .markdown-body h1 {
+            font-size: 2em;
+        }
+
+        .markdown-body h2 {
+            font-size: 1.5em;
+        }
+
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .markdown-body p,
+        .markdown-body ul,
+        .markdown-body ol,
+        .markdown-body blockquote,
+        .markdown-body pre,
+        .markdown-body table,
+        .markdown-body hr {
+            margin-bottom: 16px;
+        }
+
+        .markdown-body a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 2em;
+        }
+
+        .markdown-body li {
+            margin-bottom: 4px;
+        }
+
+        .markdown-body blockquote {
+            margin-left: 0;
+            padding: 0 16px;
+            color: #6a737d;
+            border-left: 4px solid #dfe2e5;
+        }
+
+        .markdown-body code {
+            padding: 0.2em 0.4em;
+            background: #f6f8fa;
+            border-radius: 3px;
+            font-size: 85%;
+        }
+
+        .markdown-body pre {
+            max-width: 100%;
+            padding: 16px;
+            overflow: auto;
+            background: #f6f8fa;
+            border-radius: 6px;
+        }
+
+        .markdown-body pre code {
+            padding: 0;
+            background: transparent;
+            font-size: 100%;
+        }
+
+        .markdown-body table {
+            display: block;
+            width: 100%;
+            overflow: auto;
+            border-collapse: collapse;
+        }
+
+        .markdown-body th,
+        .markdown-body td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+
+        .markdown-body th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+
+        .markdown-body tr:nth-child(2n) {
+            background-color: #f8f8f8;
+        }
+
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .markdown-body hr {
+            border: 0;
+            border-top: 1px solid #eaecef;
+        }
+
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .document-list {
+                grid-template-columns: 1fr;
+            }
+
+            body.reader-page {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+
+            .reader-toolbar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .document-path {
+                width: 100%;
+            }
+
+            .markdown-body {
+                padding: 24px 18px;
+            }
+
+            .step-title {
+                font-size: 14px;
+            }
+
+            .copy-btn {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+
+            code[class*="language-"] {
+                font-size: 12px;
+            }
+        }

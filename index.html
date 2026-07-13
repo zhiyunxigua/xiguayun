@@ -3,293 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神话天坑策划案</title>
-    <!-- marked 库 -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-    <!-- 代码高亮 -->
+    <meta name="description" content="浏览并阅读 docs 目录中的 Markdown 文档">
+    <title>文档</title>
+    <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/highlight.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: #fafafa;
-            color: #24292e;
-            line-height: 1.6;
-        }
-        #markdown-content {
-            background: white;
-            padding: 40px 50px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        }
-        /* 标题样式 - 锚点链接的跳转目标 */
-        #markdown-content h1,
-        #markdown-content h2,
-        #markdown-content h3,
-        #markdown-content h4,
-        #markdown-content h5,
-        #markdown-content h6 {
-            scroll-margin-top: 20px;
-        }
-        #markdown-content h1,
-        #markdown-content h2 {
-            border-bottom: 1px solid #eaecef;
-            padding-bottom: .3em;
-            margin-top: 24px;
-            margin-bottom: 16px;
-        }
-        #markdown-content h3,
-        #markdown-content h4 {
-            margin-top: 24px;
-            margin-bottom: 16px;
-        }
-        #markdown-content p {
-            margin-top: 0;
-            margin-bottom: 16px;
-        }
-        #markdown-content a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        #markdown-content a:hover {
-            text-decoration: underline;
-        }
-        /* 锚点链接（目录中的跳转链接）特殊样式 */
-        #markdown-content a[href^="#"] {
-            color: #0366d6;
-        }
-        #markdown-content a[href^="#"]:hover {
-            text-decoration: underline;
-        }
-        #markdown-content code {
-            background: #f6f8fa;
-            padding: .2em .4em;
-            border-radius: 3px;
-            font-size: 85%;
-        }
-        #markdown-content pre {
-            background: #f6f8fa;
-            padding: 16px;
-            border-radius: 6px;
-            overflow: auto;
-            margin-bottom: 16px;
-        }
-        #markdown-content pre code {
-            background: transparent;
-            padding: 0;
-            font-size: 100%;
-        }
-        #markdown-content blockquote {
-            border-left: 4px solid #dfe2e5;
-            padding: 0 16px;
-            margin: 0 0 16px 0;
-            color: #6a737d;
-        }
-        #markdown-content table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 16px;
-            display: block;
-            overflow: auto;
-        }
-        #markdown-content th,
-        #markdown-content td {
-            border: 1px solid #dfe2e5;
-            padding: 6px 13px;
-        }
-        #markdown-content th {
-            background-color: #f6f8fa;
-            font-weight: 600;
-        }
-        #markdown-content tr:nth-child(2n) {
-            background-color: #f8f8f8;
-        }
-        #markdown-content img {
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-        #markdown-content ul,
-        #markdown-content ol {
-            padding-left: 2em;
-            margin-bottom: 16px;
-        }
-        #markdown-content li {
-            margin-bottom: 4px;
-        }
-        #markdown-content hr {
-            border: 0;
-            border-top: 1px solid #eaecef;
-            margin: 24px 0;
-        }
-        #markdown-content .task-list-item {
-            list-style: none;
-        }
-        #markdown-content .task-list-item input {
-            margin-right: 8px;
-        }
-        /* 目录区域（如果有） */
-        #markdown-content ul:first-child {
-            background: #f6f8fa;
-            padding: 16px 24px;
-            border-radius: 6px;
-            margin-bottom: 24px;
-        }
-        #markdown-content ul:first-child li {
-            list-style: none;
-        }
-        #markdown-content ul:first-child a {
-            color: #0366d6;
-        }
-
-        .loading,
-        .error {
-            text-align: center;
-            padding: 40px;
-            font-size: 1.2em;
-            color: #586069;
-        }
-        .error {
-            color: #d73a49;
-        }
-        .file-info {
-            text-align: right;
-            font-size: 0.85em;
-            color: #6a737d;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #eaecef;
-        }
-        .file-info span {
-            background: #f1f8ff;
-            padding: 2px 12px;
-            border-radius: 12px;
-        }
-
-        /* 平滑滚动 */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/common.css">
 </head>
 <body>
-    <div id="markdown-content" class="loading">⏳ 正在加载 Markdown 文件...</div>
+    <div class="container">
+        <header class="site-header">
+            <h1 id="page-title">文档</h1>
+            <p id="page-subtitle" class="subtitle">浏览 docs 目录中的 Markdown 文档</p>
+        </header>
 
-    <script>
-        (async function renderMarkdown() {
-            const container = document.getElementById('markdown-content');
+        <main>
+            <section id="document-list-view" class="card" aria-labelledby="document-list-title">
+                <div id="document-list-title" class="card-title">文档列表</div>
+                <p class="section-description">选择一篇文档开始阅读</p>
+                <div id="document-list" class="document-list" aria-live="polite">
+                    <div class="status-message">正在扫描文档...</div>
+                </div>
+            </section>
 
-            // ★★★ 在这里修改文件名 ★★★
-            const markdownFile = 'thepit.md';
+            <section id="document-reader-view" hidden>
+                <nav class="reader-toolbar" aria-label="文档导航">
+                    <a id="back-button" class="button button-secondary" href="./index.html">
+                        <i data-lucide="arrow-left" aria-hidden="true"></i>
+                        <span>返回文档列表</span>
+                    </a>
+                    <span id="document-path" class="document-path"></span>
+                </nav>
 
-            try {
-                const response = await fetch(markdownFile);
+                <article id="markdown-content" class="card markdown-body" aria-live="polite">
+                    <div class="status-message">正在加载文档...</div>
+                </article>
+            </section>
+        </main>
+    </div>
 
-                if (!response.ok) {
-                    throw new Error(`无法获取文件 (HTTP ${response.status})`);
-                }
-
-                const markdownText = await response.text();
-
-                // --- 自定义渲染器：为标题自动生成 id（支持中文锚点） ---
-                const renderer = new marked.Renderer();
-
-                // 处理标题：生成 id 并添加到 HTML
-                renderer.heading = function(text, level, raw, slugger) {
-                    // 生成 id：去空格、去特殊字符，保留中文
-                    const id = raw
-                        .toLowerCase()
-                        .replace(/[^a-zA-Z0-9\u4e00-\u9fa5\- ]/g, '') // 保留中文、字母、数字、空格和连字符
-                        .replace(/\s+/g, '-') // 空格替换为连字符
-                        .replace(/-+/g, '-'); // 合并多个连字符
-
-                    // 返回带 id 的标题
-                    return `<h${level} id="${id}">${text}</h${level}>`;
-                };
-
-                // --- 使用 marked 解析 ---
-                const htmlContent = marked.parse(markdownText, {
-                    gfm: true,
-                    breaks: true,
-                    renderer: renderer, // 使用自定义渲染器
-                    highlight: function(code, lang) {
-                        if (lang && hljs.getLanguage(lang)) {
-                            try {
-                                return hljs.highlight(code, { language: lang }).value;
-                            } catch (e) {}
-                        }
-                        return code;
-                    }
-                });
-
-                // 显示文件名
-                const fileInfo = `<div class="file-info"><span>📄 ${markdownFile}</span></div>`;
-                container.innerHTML = fileInfo + htmlContent;
-                container.className = '';
-
-                // 代码高亮
-                if (typeof hljs !== 'undefined') {
-                    document.querySelectorAll('#markdown-content pre code').forEach((block) => {
-                        hljs.highlightElement(block);
-                    });
-                }
-
-                // --- 拦截锚点点击，处理滚动偏移（避免被固定顶栏遮挡） ---
-                document.querySelectorAll('#markdown-content a[href^="#"]').forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-
-                        const targetId = this.getAttribute('href').substring(1);
-                        const targetElement = document.getElementById(targetId);
-
-                        if (targetElement) {
-                            // 平滑滚动到目标，偏移20px（可调整）
-                            const offset = 20;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window
-                                .pageYOffset - offset;
-                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                        } else {
-                            // 如果没找到对应id，尝试URL跳转（兼容）
-                            window.location.hash = this.getAttribute('href');
-                        }
-                    });
-                });
-
-                // 如果URL本身带有hash，页面加载后自动跳转
-                if (window.location.hash) {
-                    setTimeout(() => {
-                        const targetId = window.location.hash.substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            const offset = 20;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window
-                                .pageYOffset - offset;
-                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                        }
-                    }, 300);
-                }
-
-            } catch (error) {
-                container.innerHTML = `
-                        <div class="error">
-                            ❌ 渲染失败<br>
-                            <small>${error.message}</small><br><br>
-                            <span style="font-size:0.8rem; color:#586069;">
-                                提示：请确认文件 "${markdownFile}" 存在，且当前页面在服务器环境下运行。
-                            </span>
-                        </div>
-                    `;
-                container.className = 'error';
-                console.error('Markdown 渲染错误:', error);
-            }
-        })();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./scripts/docs.js"></script>
 </body>
 </html>
